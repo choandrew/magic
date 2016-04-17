@@ -4,7 +4,9 @@
 
 
 ## Inspiration
-We noticed that the prices for Magic: The Gathering card prices are very expensive, but also tend to increase e
+We noticed that some of the prices for Magic: The Gathering card prices tend to react to "market news" at a relatively slow rate. A professional player would play the card, the card would increase in popularity in a short amount of time, but prices of the card would take a week to increase due to slow market response.
+
+We wanted to take advantage of this opportunity to be market makers and buy up the cards before they increase in price, so that we can potentially make a tidy profit.
 
 ## What it does
 This program seives through the over 28,000 Magic: The Gathering cards to determine candidates that will probably increase in price significantly in the near future.
@@ -41,7 +43,7 @@ trendsAnalyzer.py - analyze the trends, outputs viable cards
 main.py - this file combines all the above files into one easy to run program
 
 ## Challenges we ran into
-Getting the list of every card (over 28,000!!!) was very difficult..
+Getting the list of every card (over 28,000!!!) was very difficult.
 
 Google Trends "API" was difficult to work with.
 
@@ -51,4 +53,3 @@ We are most proud of how we integrating many different APIs (Google Trends), lib
 
 ## What's next for magic
 Backtesting the program, using better analysis, and perhaps eventually starting a small fund!
-program
