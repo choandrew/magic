@@ -22,11 +22,12 @@ def main():
             #so that google trends doesn't get suspicious of scripting...
             time.sleep(randint(4,8))
 
-
     path = "./output"
 
     os.chdir(path)
 
+
+    #gets rid of all the junk in the csv file
     for file in glob.glob("*.csv"):
         
         f = open(file,"r")
@@ -41,7 +42,6 @@ def main():
 
         for line in lines:
             f.write(line)
-
 
 
 
