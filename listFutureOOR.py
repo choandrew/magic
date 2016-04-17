@@ -1,14 +1,13 @@
-#! /usr/bin/env python3.5
+
 #set information taken from http://mtgsalvation.gamepedia.com/Set
 from bs4 import BeautifulSoup
 import requests
 import csv
  
-#import time
-#import datetime
+
 from datetime import datetime
 def dateParse(mdy):
-	sp = mdy.split(' ')# if three values, them md,y; if two, them my
+	sp = mdy.split(' ')
 	if len(sp) ==3:
 		if mdy[0] == "c":
 			if (sp[1] == "Spring") | (sp[1]=="Fall") | (sp[1] == "Winter") | (sp[1] =="Summer"):
@@ -42,14 +41,8 @@ def main():
 	soup = BeautifulSoup(html, "html.parser")#, "lxml")
 	table = soup.find("table",{"style":"font-size:95%;"})
 	soup = BeautifulSoup(str(table), "html.parser")
-	#print (table)
 
-	#filter for "Expansion set"
-	#find first date > now date
-	#find expansion
 	count = 0
-	#cmonth = int(time.strftime("%m"))
-	#cyear = int(time.strftime("%Y"))
 	today = datetime.now()
 	rows = soup.find_all('tr')
 	listrec = []
@@ -61,17 +54,14 @@ def main():
 			name =cells[0].string
 			abbr = ((cells[2].contents)[0])
 			if date >= today:
-	#			last2 = listrec[(len(listrec)-5)]
-		#		last1 = listrec[(len(listrec)-6)]
 				inPlay = listrec[(len(listrec)-4):]
-		#		print (inPlay)
 				compareSet(inPlay)
 				return
 			if date.year >= int(today.year) -1:
 				listrec.append(abbr)
 def compareSet(inPlay):
-	f = open('listOfCardsSets.txt', 'rt')
-	g = open('listFutureOOR.txt', 'wt')
+	f = open('listOfCardsSets.txt', 'rt',encoding='iso-8859-15')
+	g = open('listFutureOOR.txt', 'wt',encoding='iso-8859-15')
 	try: 
 		writer =csv.writer(g)
 		reader = csv.reader(f)
@@ -86,12 +76,5 @@ def compareSet(inPlay):
 
 
 
-	#compares with cardlist
-
-	#		print (abbr)
-	#		print (date)
-	#		print (name)
-	#		print ()
-	#		print (listrec)
 if __name__ == "__main__":
     main()
