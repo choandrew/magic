@@ -3,11 +3,11 @@ import glob, os
 
 def main():
  
-    f = open("./listFutureOOR.py", "r")
+    f = open("./listFutureOOR.txt", "r")
 
         
     lines = f.readlines()
-    f.close()
+
 
     
     notOneWord = [line for line in lines if len(line.strip().split()) > 1]
@@ -17,6 +17,8 @@ def main():
         p.write(line)
 
 
+    f.close()
+    p.close()
 
 if __name__ == "__main__":
     main()
