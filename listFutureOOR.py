@@ -59,8 +59,8 @@ def main():
 			name =cells[0].string
 			abbr = ((cells[2].contents)[0])
 			if date >= today:
-				last2 = listrec[(len(listrec)-3)]
-				last1 = listrec[(len(listrec)-4)]
+				last2 = listrec[(len(listrec)-5)]
+				last1 = listrec[(len(listrec)-6)]
 				print (last1)
 				print (last2)
 				return
