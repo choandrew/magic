@@ -1,13 +1,17 @@
-from listOfCardsSets.py import main()
-from listFutureOOR.py import main()
-from listOneWord.py import main()
-from listBanned.py import main()
+import listOfCardsSets
+import listFutureOOR
+import listOneWord
+import listBanned
 
+import googleTrends
+import trendsAnalyzer
 
 def main():
-    listOfCardsSets.py.main()
-    listFutureOOR.py.main()
-    listOneWord.py.main()
-    listBanned.py.main()
-
+    listOfCardsSets.main()
+    listFutureOOR.main()
+    listOneWord.main()
+    listBanned.main()
+    
+    googleTrends.main()
+    trendsAnalyzer.main()
 
