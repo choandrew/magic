@@ -17,3 +17,7 @@ def main():
                 txtfile.write("%s" % a)
                 b = ''.join(filter((lambda x: (str.isalpha(x) or x==' ')), row[2])    )
                 txtfile.write(", %s\n" % row[4])
+
+
+if __name__ == "__main__":
+    main()

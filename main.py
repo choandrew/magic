@@ -15,3 +15,7 @@ def main():
     googleTrends.main()
     trendsAnalyzer.main()
 
+
+
+if __name__ == "__main__":
+    main()
