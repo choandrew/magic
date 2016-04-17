@@ -2,6 +2,8 @@
 #set information taken from http://mtgsalvation.gamepedia.com/Set
 from bs4 import BeautifulSoup
 import requests
+import csv
+ 
 #import time
 #import datetime
 from datetime import datetime
@@ -59,13 +61,33 @@ def main():
 			name =cells[0].string
 			abbr = ((cells[2].contents)[0])
 			if date >= today:
-				last2 = listrec[(len(listrec)-5)]
-				last1 = listrec[(len(listrec)-6)]
-				print (last1)
-				print (last2)
+	#			last2 = listrec[(len(listrec)-5)]
+		#		last1 = listrec[(len(listrec)-6)]
+				inPlay = listrec[(len(listrec)-4):]
+		#		print (inPlay)
+				compareSet(inPlay)
 				return
 			if date.year >= int(today.year) -1:
 				listrec.append(abbr)
+def compareSet(inPlay):
+	f = open('listOfCardsSets.txt', 'rt')
+	g = open('listFutureOOR.txt', 'wt')
+	try: 
+		writer =csv.writer(g)
+		reader = csv.reader(f)
+		for row in reader:
+			abbrev = row[1][1:]
+			if abbrev in inPlay:
+				writer.writerow([row[0]])
+	finally: 
+		g.close()
+		f.close()
+	return
+
+
+
+	#compares with cardlist
+
 	#		print (abbr)
 	#		print (date)
 	#		print (name)
