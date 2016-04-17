@@ -1,7 +1,7 @@
+#! /usr/bin/env python3.5
 import re
 
 def main():
-
     bannedCards = [
     "Intangible Virtue (Innistrad-Avacyn Restored block)"
     ,"Lingering Souls (Innistrad-Avacyn Restored block)"
@@ -179,7 +179,6 @@ def main():
     ,"Yawgmoths Bargain"
     ,"Yawgmoths Will"
     ]
-    
     for idx, card in enumerate(bannedCards):
         if "(" in card:
             parenLocation = card.find("(")
@@ -191,11 +190,13 @@ def main():
 
     for bannedCard in bannedCards:
         if bannedCard in lines:
+            print (bannedCard)
             lines.remove(bannedCard)
-
     f.close()
     p = open("listFinal.txt", "w")
     for line in lines:
         p.write(line)
 
     p.close()
+if __name__ == "__main__":
+    main()
