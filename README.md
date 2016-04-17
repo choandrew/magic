@@ -21,20 +21,20 @@ and then out of the remaining cards, will pick the ones that have seen a very re
 
 (each file in this section outputs a .txt file with the corresponding name)
 
-listOfCards.py - gets list of all cards
+listOfCardsSets.py - gets list of all cards
 
-listFutureOOR.py - list of cards going out of rotation within 2? months
+listFutureOOR.py - rids list of cards that will not be in play for the next block of rotations
 
-ListOneWord.py - list of one word cards
+ListOneWord.py - rids the list of cards with one word names 
 
-listBanned.py - list of CURRENT banned cards
+listBanned.py - rids the list of currently banned cards
 
 
 listFinal.txt - would contain final list of cards to potentially purchase
 
 
 ###GOOGLE TRENDS:
-googleTrends.py - download the csv files for each card in list final
+googleTrends.py - download the csv files for each card in listFinal.txt
 
 trendsAnalyzer.py - analyze the trends, outputs viable cards
 
